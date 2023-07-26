@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
+
+:root {
+  --bg-clr: #eee;
+  --tx-clr: #111;
+  --bt-clr: #b3d4fc;
+  --ct: hsl(245, 85%, 10%);
+  color-scheme: light dark;
+  color: var(--tx-clr);
+  background-color: var(--bg-clr);
+}
+
+@media(prefers-color-scheme: dark) {
+  :root {
+    --bg-clr: #111;
+    --tx-clr: #eee;
+    --bt-clr: #0a5153;
+    --ct: hsl(245, 85%, 90%);
+  }
+}
+
+::-moz-selection,
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+main>* {
+  margin-block-start: 1em;
+}
+
+main {
+  max-width: min(100% - 2rem, 65ch);
+  margin-inline: auto;
+  margin-block: 4rem;
+}
+
+img {
+  margin-inline: auto;
+}
+
+header {
+  height: 40vh;
+  height: 40svh;
+  display: grid;
+  place-items: center;
+
+  --s: 100px;
+  /* control the size */
+  --c1: hsl(39, 65%, 60%);
+  --c2: hsl(185, 9%, 50%);
+
+  --_g: #0000, #0004 5%,
+    var(--c2) 6% 14%, var(--c1) 16% 24%, var(--c2) 26% 34%, var(--c1) 36% 44%,
+    var(--c2) 46% 54%, var(--c1) 56% 64%, var(--c2) 66% 74%, var(--c1) 76% 84%,
+    var(--c2) 86% 94%, #0004 95%, #0000;
+  background:
+    radial-gradient(100% 50% at 100% 0, var(--_g)),
+    radial-gradient(100% 50% at 0 50%, var(--_g)),
+    radial-gradient(100% 50% at 100% 100%, var(--_g));
+  background-size: var(--s) calc(2*var(--s));
+}
+
+@media(prefers-color-scheme: dark) {
+  header {
+    --c1: hsl(39, 65%, 30%);
+    --c2: hsl(185, 9%, 40%);
+  }
+}
+
+h1 {
+  rotate: -10deg;
+  font-size: 3rem;
+  text-decoration-style: wavy;
+  text-decoration-thickness: 4px;
+  text-decoration-line: underline;
+  font-style: oblique;
+  font-family: 'Bagel Fat One', cursive;
+  color: var(--ct);
+}
+
+h2 {
+  font-family: 'Bagel Fat One', cursive;
+  font-size: 2rem;
+  color: var(--ct);
+}
+
+.spin {
+  animation: spin linear 2s infinite;
+}
+
+@keyframes spin {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: -360deg;
+  }
+}
+
+button {
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 10px;
+  background: var(--bt-clr);
+  box-shadow: 0 0 10px 10px hsl(0 0% 0% / 0.2);
+}
+
+.button-container {
+  display: grid;
+  gap: 2rem;
+  margin-block: 3rem;
+}

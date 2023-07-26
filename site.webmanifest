@@ -1,0 +1,12 @@
+{
+  "short_name": "Jack's Cool Site",
+  "name": "Jack's Cool Site",
+  "icons": [{
+    "src": "icon.png",
+    "type": "image/png",
+    "sizes": "192x192"
+  }],
+  "start_url": "/",
+  "background_color": "#dbad57",
+  "theme_color": "#dbad57"
+}
